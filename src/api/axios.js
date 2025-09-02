@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // 🚩live url will replace
+  // baseURL: "http://localhost:5000/api", // 🚩live url will replace
+  baseURL: "https://inventory-backend-x1n8.onrender.com",
 });
 
 API.interceptors.request.use((config) => {
