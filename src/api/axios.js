@@ -1,8 +1,12 @@
 import axios from "axios";
 
+// Determine the base URL based on the environment
+const baseURL = import.meta.env.PROD 
+  ? "https://inventory-backend-x1n8.onrender.com"
+  : import.meta.env.VITE_BACKEND_URL;
+
 const API = axios.create({
-  // baseURL: "http://localhost:5000/api", // 🚩live url will replace
-  baseURL: "https://inventory-backend-x1n8.onrender.com",
+  baseURL: baseURL || "http://localhost:5000/api",
 });
 
 API.interceptors.request.use((config) => {
