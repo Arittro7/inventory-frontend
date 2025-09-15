@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import Inventories from "./pages/Inventories";
 import Items from "./pages/Items";
 import ProtectedRoute from "./components/ProtectedRoute";
+import GenerateToken from "./components/GenerateToken";
+import AggregatedResults from "./components/AggregatedResults";
 
 export default function App() {
   return (
@@ -39,6 +41,26 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+
+
+        {/* Odoo routes */}
+        <Route
+          path="/token"
+          element={
+            <ProtectedRoute>
+              <GenerateToken />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/aggregate"
+          element={
+            <ProtectedRoute>
+              <AggregatedResults />
+            </ProtectedRoute>
+          }
+        />
+        
       </Routes>
     </BrowserRouter>
   );
